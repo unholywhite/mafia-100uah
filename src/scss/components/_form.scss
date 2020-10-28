@@ -1,10 +1,12 @@
 .form100 {
     &-body {
         background-attachment: fixed;
+        background-color: $c-bgrey;
         background-image: url("../images/bg-sm.jpg");
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: 100% auto;
+        height: 100%;
 
         @include md {
             background-image: url("../images/bg-lg.jpg");
@@ -34,7 +36,6 @@
         }
 
         @include xxl {
-            height: 100vh;
             position: relative;
         }
     }
@@ -49,15 +50,6 @@
         @include md {
             padding-top: 50px;
             padding-bottom: 50px;
-        }
-
-        @include xxl {
-            left: 0;
-            padding-top: 30px;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
         }
     }
 
@@ -328,6 +320,15 @@
 
             @include sm {
                 font-size: 17px;
+            }
+
+            a {
+                color: $c-light;
+                text-decoration: underline;
+
+                @include hover {
+                    color: rgba($c-light, .75);
+                }
             }
 
             span {
