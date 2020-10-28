@@ -14,7 +14,6 @@
   });
 
   // Phone mask
-
   $(function () {
     var phoneInput = $('.input-phone');
     phoneInput.mask('+38 (099) 999-99-99', {placeholder: '_'});
@@ -43,7 +42,7 @@
     });
   });
 
-  // validation - ukrainian phone number in international format
+  // Validation - ukrainian phone number in international format
   $.validator.methods.phoneUA = function (value, element) {
     return this.optional(element) || /\+38 \(0\d{2}\) \d{3}-\d{2}-\d{2}/.test(value);
   }
