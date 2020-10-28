@@ -17,16 +17,16 @@
 
   $(function () {
     var phoneInput = $('.input-phone');
-    $(phoneInput).mask("+38 (099) 999-99-99", {placeholder: "_"});
-    $(phoneInput).on('focus', function () {
-      if ($(this).val() === '') {
-        $(this).val("+38 (0 ");
+    phoneInput.mask('+38 (099) 999-99-99', {placeholder: '_'});
+    phoneInput.on('focus', function () {
+      if (phoneInput.val() === '') {
+        phoneInput.val('+38 (0 ');
       }
     });
     $(phoneInput).on('blur', function () {
-      if($(this).val().length !== 19) {
-        $(this).val("");
-        $(this).parent().find('label').removeClass('__active');
+      if(phoneInput.val().length !== 19) {
+        phoneInput.val('');
+        phoneInput.parent().find('label').removeClass('__active');
       }
     });
   });
@@ -34,10 +34,10 @@
   // Date mask
   $(function () {
     var dateInput = $('.input-date');
-    dateInput.mask("9999-99-99", {placeholder: "_"});
+    dateInput.mask('9999-99-99', {placeholder: '_'});
     dateInput.on('blur', function () {
       if(dateInput.val().length !== 10) {
-        dateInput.val("");
+        dateInput.val('');
         dateInput.parent().find('label').removeClass('__active');
       }
     });
@@ -53,17 +53,17 @@
     $('#form100').validate({
       ignore: [],
       rules: {
-        "form100-name": {
+        'form100-name': {
           required: true
         },
-        "form100-phone": {
+        'form100-phone': {
           required: true,
           phoneUA: true
         },
-        "form100-email": {
+        'form100-email': {
           required: true
         },
-        "form100-rules": {
+        'form100-rules': {
           required: true
         }
       },
