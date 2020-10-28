@@ -1,0 +1,11 @@
+linters:
+
+    Indentation:
+        severity: warning
+        character: space
+        width: 4
+
+    NameFormat:
+        enabled: true
+        allow_leading_underscore: true
+        convention: hyphenated_lowercase

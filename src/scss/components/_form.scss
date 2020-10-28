@@ -1,0 +1,301 @@
+.form100 {
+    &-body {
+        background-attachment: fixed;
+        background-image: url("../images/bg-sm.jpg");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+
+        @include md {
+            background-image: url("../images/bg-lg.jpg");
+        }
+
+        @include lg {
+            background-image: url("../images/bg-xl.jpg");
+        }
+
+        @include xxl {
+            background-position: center 90%;
+        }
+    }
+
+    &-container {
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 0 10px;
+        width: 100%;
+
+        @include xxl {
+            height: 100vh;
+            position: relative;
+        }
+    }
+
+    &-content {
+        padding-bottom: 50px;
+        padding-top: 40px;
+
+        @include xxl {
+            left: 0;
+            right: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &-logo {
+        background-image: url("../images/logo-mafia.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        padding-bottom: 23.4%;
+        width: 100%;
+
+        &-wrapper {
+            margin: 0 auto;
+            width: 133px;
+
+            @include sm {
+                width: 166px;
+            }
+
+            @include md {
+                width: 200px;
+            }
+
+            @include lg {
+                width: 250px;
+            }
+
+            @include xl {
+                width: 300px;
+            }
+        }
+    }
+
+    &-frame {
+        border-left: solid 1px $c-light;
+        border-right: solid 1px $c-light;
+        margin-top: 80px;
+        padding: 140px 0 200px;
+        position: relative;
+    }
+
+    &-border {
+        height: 1px;
+        position: absolute;
+
+        &.__top {
+            top: 0;
+            width: 175px;
+        }
+
+        &.__bottom {
+            bottom: 0;
+            width: 220px;
+        }
+
+        &.__left {
+            background: linear-gradient(to right, $c-light, rgba($c-light, 0));
+            left: 0;
+        }
+
+        &.__right {
+            background: linear-gradient(to left, $c-light, rgba($c-light, 0));
+            right: 0;
+        }
+    }
+
+    &-header {
+        font-size: 21px;
+        left: 50%;
+        line-height: 1.25;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        transform: translate(-50%, -50%);
+        width: 60%;
+
+        span {
+            display: block;
+        }
+
+        strong {
+            font-size: 26px;
+        }
+    }
+
+    &-element {
+        background-image: url("../images/element.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        padding-bottom: 17.5%;
+        width: 100%;
+
+        &-wrapper {
+            top: 100%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 360px;
+
+            @include sm {
+            }
+
+            @include md {
+            }
+
+            @include lg {
+            }
+
+            @include xl {
+            }
+        }
+    }
+
+    &-form {
+        width: 100%;
+
+        &-wrapper {
+            margin: 0 auto;
+            max-width: 520px;
+            width: 100%;
+        }
+    }
+
+    &-input {
+        background-color: $c-light;
+        border: 2px solid $c-light;
+        border-radius: 0;
+        color: $c-default;
+        font-size: 18px;
+        height: 48px;
+        padding: 0 18px;
+        width: 100%;
+
+        &-container {
+            margin-bottom: 15px;
+            position: relative;
+
+            &.__button {
+                text-align: center;
+            }
+
+            &.error .form100-input {
+                border-color: $c-error;
+            }
+        }
+    }
+
+    &-label {
+        bottom: 5px;
+        color: $c-form;
+        font-size: 17px;
+        font-style: italic;
+        left: 18px;
+        line-height: 1;
+        pointer-events: none;
+        position: absolute;
+        transition: all $time;
+
+        &.__active {
+            opacity: 0;
+        }
+    }
+
+    &-remark p {
+        font-size: 17px;
+        font-style: italic;
+        margin-bottom: 15px;
+        text-shadow: $c-default 1px 0 8px;
+        text-align: right;
+    }
+
+
+    &-checkbox {
+        display: none;
+
+        &-label {
+            display: inline-block;
+            cursor: pointer;
+            font-size: 17px;
+            line-height: 24px;
+            position: relative;
+            padding-left: 30px;
+            transition: $time linear;
+            vertical-align: middle;
+
+            span {
+                text-shadow: $c-default 1px 0 8px;
+            }
+
+            &::before {
+                background-color: $c-light;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 10px 8px;
+                border: solid 2px $c-green;
+                border-radius: 2px;
+                content: '';
+                height: 20px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transition: $time linear;
+                width: 20px;
+            }
+
+            &:hover::before {
+                border: solid 2px $c-green-alt;
+                background-color: $c-green-hover;
+            }
+
+            .error & {
+                &::before {
+                    border-color: $c-error;
+                    background-color: $c-error-hover;
+                }
+
+                &:hover::before {
+                    background-color: $c-light;
+                }
+            }
+        }
+
+        &:checked {
+            & + .form100-checkbox-label {
+                &::before {
+                    background-color: $c-green;
+                    background-image: url("../images/check.svg");
+                    border: solid 2px $c-green;
+                }
+            }
+        }
+    }
+
+    &-submit {
+        background: $c-green;
+        border: 1px solid $c-green;
+        border-radius: 3px;
+        color: $c-light;
+        font-size: 18px;
+        height: 50px;
+        line-height: 1;
+        max-width: 360px;
+        transition: all $time;
+        width: 100%;
+
+        @include hover {
+            background: $c-green-alt;
+            border: 1px solid $c-green-alt;
+        }
+    }
+}
+
+.form100-input:focus ~ .form100-label {
+    opacity: 0;
+}
